@@ -11,6 +11,18 @@ export function getPokemonIdFromUrl(url) {
 export function imageUrl(id) {
   return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
 }
+
+/* Species: descripciones, hábitat, egg groups, etc. */
+export async function getPokemonSpecies(idOrName) {
+  try {
+    const r = await fetch(`${BASE_URL}/pokemon-species/${idOrName}`);
+    if (!r.ok) throw new Error("Error fetching species");
+    return await r.json();
+  } catch (err) {
+    console.error(err);
+    return null; // mantenemos mismo patrón que tus otras funciones
+  }
+}
   // Obtiene lista de pokémon (por defecto 20)
 const pokeApiServices = {
   async getPokemons() {
@@ -33,7 +45,8 @@ const pokeApiServices = {
       console.error(err);
       return null;
     }
-  }
+  },
+  getPokemonSpecies,
 };
 
 export default pokeApiServices;

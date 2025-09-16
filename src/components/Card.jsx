@@ -29,9 +29,22 @@ export default function Card({ item }) {
       });
     }
   };
-
   return (
-    <div className="card h-100 d-flex flex-column">
+    <div className="card h-100 d-flex flex-column position-relative">
+
+      {/* ❤️ Favorito arriba a la derecha */}
+      <button
+        type="button"
+        className="favorite-btn"
+        title={isFav ? "Quitar de favoritos" : "Añadir a favoritos"}
+        onClick={onToggleFavorite}
+      >
+        {isFav ? (
+          <i className="fa-solid fa-heart text-danger" />
+        ) : (
+          <i className="fa-regular fa-heart text-dark" />
+        )}
+      </button>
 
       <img
         src={imageUrl(id)}
@@ -43,53 +56,35 @@ export default function Card({ item }) {
         }}
       />
 
-
-      <div className="card-body d-flex flex-column"> {/* contenedor flex vertical */}
+      <div className="card-body d-flex flex-column">
         <h6 className="card-title text-capitalize mb-2 text-truncate" title={item.name}>
           {item.name}
         </h6>
 
-        {/* Acciones al fondo del body */}
+        {/* Acciones */}
         <div className="mt-auto d-flex gap-2 align-items-center">
-          {/* Read later */}
           <button
             type="button"
-            className={`btn btn-sm ${inReadLater ? "btn-primary" : "btn-outline-primary"}`}
+            className={`btn btn-sm ${inReadLater ? "btn-secondary" : "btn-outline-primary"}`}
             onClick={!inReadLater ? onAddReadLater : undefined}
             disabled={inReadLater}
             title={inReadLater ? "Ya está agregado" : "Añadir a Read later"}
           >
             {inReadLater ? (
-              <>
-                <i className="fa-solid fa-bookmark me-1" />
-                Added
-              </>
+              <i className="fa-solid fa-bookmark" />
             ) : (
-              <>
-                <i className="fa-regular fa-bookmark me-1" />
-                Read later
-              </>
+              <i className="fa-regular fa-bookmark" />
             )}
           </button>
-
-          {/* Detalle */}
-          <Link to={`/detail/${id}`} className="btn btn-outline-success btn-sm ms-auto">
-            Details
-          </Link>
-
-          {/* ❤️ Favorito */}
-          <button
-            type="button"
-            className="btn btn-light border btn-sm"
-            title={isFav ? "Quitar de favoritos" : "Añadir a favoritos"}
-            onClick={onToggleFavorite}
+              
+          <Link to={`/detail/${id}`} 
+          className="btn btn-outline-success btn-sm ms-auto "
+          title="Details"
           >
-            {isFav ? (
-              <i className="fa-solid fa-heart text-danger" />
-            ) : (
-              <i className="fa-regular fa-heart" />
-            )}
-          </button>
+            <i className="fa-solid fa-circle-info" />
+            
+            
+          </Link>
         </div>
       </div>
     </div>

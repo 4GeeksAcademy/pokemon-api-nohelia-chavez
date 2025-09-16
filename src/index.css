@@ -33,3 +33,14 @@ body {
   background:rgb(103, 197, 75);
 
 }
+.favorite-btn{
+  position: absolute;
+  background: transparent;
+  border: none;
+  top: 6px;
+  right: 6px;
+  padding: 0;
+  cursor: pointer;
+  font-size: 1.4rem;
+  line-height:1 ;
+}
