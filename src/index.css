@@ -1,0 +1,35 @@
+body {
+  background: linear-gradient(180deg, #e5adf7 0%, #b3c3ec 50%, #e0d7d7 100%);
+  color: #222; /* Texto oscuro para que contraste */
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  
+}
+/*scroll horizontal x*/
+.pokemon-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+  scrollbar-color: #d8e704 #0703f5; 
+  scrollbar-width:auto;
+}
+.detail-poki{
+  background: rgba(127, 125, 223, 0.85);
+  border-radius: 12px;
+  padding: 1.5rem;
+  color: white;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+.card {
+  transition: transform 0.3s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+.navbar-pastel {
+  background:rgb(103, 197, 75);
+
+}
