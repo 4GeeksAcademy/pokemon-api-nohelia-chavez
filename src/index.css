@@ -12,7 +12,7 @@ body {
   overflow-x: auto;
   gap: 1rem;
   padding-bottom: 0.5rem;
-  scrollbar-color: #d8e704 #0703f5; 
+  scrollbar-color: #eee60c #0703f5; 
   scrollbar-width:auto;
 }
 .detail-poki{
@@ -22,6 +22,10 @@ body {
   color: white;
   box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
+
+.detail-cardpoki{
+   background: rgba(240, 203, 226, 0.85);
+}
 .card {
   transition: transform 0.3s ease, box-shadow 0.2s ease;
 }
@@ -30,7 +34,7 @@ body {
   box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
 .navbar-pastel {
-  background:rgb(103, 197, 75);
+  background:rgb(153, 208, 145);
 
 }
 .favorite-btn{

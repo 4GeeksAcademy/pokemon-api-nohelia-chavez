@@ -34,15 +34,16 @@ export const Detail = () => {
     load();
   }, [id, dispatch]);
   return (
-    <div className="container detail-poki mt-3 py-3 pokemon-detail bgcolor">
+    <div className="container my-4r detail-poki">
       <Link to="/" className="btn btn-secondary mb-3 ">← Back</Link>
 
       {!data ? (
         <div className="alert alert-info">Loading…</div>
       ) : (
-        <div className="row g-4 ">
-          <div className="col-12 col-md-4 ">
-            
+        <div className="card shadow-lg border-0 ">
+          <div className="row g-0 detail-cardpoki ">
+            <div className="col-12 col-md-4 d-flex align-items-center justify-content-center bg-light p-3">
+          
             <img 
               src={imageUrl(id)}
               alt={data.name}
@@ -50,8 +51,8 @@ export const Detail = () => {
               onError={(e) => { e.currentTarget.src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png"; }}
             />
           </div>
-          <div className="col-12 col-md-8 ">
-            <h2 className="mb-3 text-capitalize">{data.name}</h2>
+          <div className="col-12 col-md-8 p-4 ">
+            <h2 className="mb-3 text-capitalize text-light">{data.name}</h2>
 
              {/* Nuevo Descripción */}
             <p className="fst-italic text-dark fw-bold">{description}</p>
@@ -67,7 +68,7 @@ export const Detail = () => {
 
           
 
-            <div className="container">
+            <div className="row">
               <div className="col-6 mb-2">
                 <div className="small text-dark fw-bold">Height</div>
                 <div className="fw-semibold">{data.height}</div>
@@ -95,6 +96,7 @@ export const Detail = () => {
             </div>
           </div>
         </div>
+         </div>
       )}
     </div>
   );
